@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Views Room</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/libs/fontawesome-free-7.1.0-web/css/all.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark px-4 py-3">
+        <span class="navbar-brand mb-0 h1">
+            <h3><i id="go-back" class="bi bi-arrow-left me-1"></i> All Rooms of Hotel</h3>
+        </span>
+        <span class="text-white-50 small" id="today-date"></span>
+    </nav>
+    <div class="container-lg py-4">
+        <div>
+            <div class="row g-3 mb-4">
+                <div class="col-4">
+                    <div class="card stat-card shadow-sm text-center py-3 bg-white">
+                        <div class="stat-val text-dark" id="total-rooms">0</div>
+                        <div class="stat-lbl text-secondary">Total Rooms</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card stat-card shadow-sm text-center py-3 bg-success bg-opacity-10">
+                        <div class="stat-val text-success" id="checkIn-rooms">0</div>
+                        <div class="stat-lbl text-success">Check In</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card stat-card shadow-sm text-center py-3 bg-danger bg-opacity-10">
+                        <div class="stat-val text-danger" id="checkOut-rooms">0</div>
+                        <div class="stat-lbl text-danger">Check Out</div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Buttons for check In and Check out -->
+            <div class="d-flex gap-2 mb-4 flex-wrap">
+                <button id="btnCheckIn" class="btn btn-outline-success btn-sm rounded-2 px-3">Check In</button>
+                <button id="btnCheckOut" class="btn btn-outline-danger btn-sm rounded-2 px-3">Check Out</button>
+                <button id="btnClearData" class="btn btn-outline-secondary btn-sm rounded-2 px-3">
+                    <i class="bi bi-trash me-1"></i> Clear All Data
+                </button>
+            </div>
+            <!-- Rooms grid -->
+            <div id="rooms-container"></div>
+        </div>
+    </div>
+    <!-- Check In Model  -->
+    <div class="modal fade" id="checkInModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">
+                        <i class="bi bi-box-arrow-in-right text-success me-2"></i>
+                        <span id="ci-title">Check In</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold">Guest name <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="name-guest" placeholder="Enter your name.">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold">Floor Number <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="floor-num" placeholder="Enter your Floor number">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold">Room Number <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="room-num" placeholder="Enter your Room number">
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button class="btn btn-dark px-4" data-bs-dismiss="modal">Cancel</button>
+                    <button id="confirm-checkin" class="btn btn-success px-4">
+                        <i class="bi bi-check-lg me-1"></i> Check In
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Check Out Model  -->
+    <div class="modal fade" id="checkOutModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">
+                        <i class="bi bi-box-arrow-in-right text-success me-2"></i>
+                        <span id="ci-title">Check Out</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body pt-3">
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold">Floor Number <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="co-floor-num" placeholder="Enter your Floor number">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold">Room Number <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="co-room-num" placeholder="Enter your Room number">
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button class="btn btn-dark px-4" data-bs-dismiss="modal">Cancel</button>
+                    <button id="confirm-checkout" class="btn btn-danger px-4">
+                        <i class="bi bi-check-lg me-1"></i> Check Out
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/booking.js"></script>
+
+</html>

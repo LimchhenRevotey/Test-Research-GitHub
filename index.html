@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/libs/fontawesome-free-7.1.0-web/css/all.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark px-4 py-3">
+        <span class="navbar-brand mb-0 h1">
+            <h3><i class="bi bi-building me-2 text-info"></i> Hotel Management</h3>
+        </span>
+        <span class="text-white-50 small" id="today-date"></span>
+    </nav>
+
+    <div class="container-lg py-4">
+        <!-- Tab -->
+        <div id="tab-setup">
+            <!-- Add Floor Form -->
+            <div class="card shadow-sm border-0 rounded-4 mb-4">
+                <div class="card-body p-4">
+                    <h6 class="text-uppercase text-muted mb-3" style="font-size:12px;letter-spacing:.07em">
+                        <i class="bi bi-plus-circle me-1"></i> Add New Floor
+                    </h6>
+                    <div class="row g-3 align-items-end">
+                        <div class="col-12 col-sm-6">
+                            <label class="form-label small fw-semibold">Floors</label>
+                            <input type="number" class="form-control" id="floor-name" min="1" max="10" value="0">
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <label class="form-label small fw-semibold">Rooms</label>
+                            <input type="number" class="form-control" id="floor-rooms" min="1" max="30" value="0">
+                        </div>
+                        <div class="col-12 col-sm-3">
+                            <button class="btn btn-dark w-100" id="add-floor">
+                                <i class="bi bi-plus-lg me-1"></i> Add Floor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Floors List -->
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-between align-content-center p-2">
+                        <h6 class="text-uppercase text-muted mb-3" style="font-size:12px;letter-spacing:.07em">
+                            <i class="bi bi-list-ul me-1"></i> Floors Created
+                        </h6>
+                        <button id="rooms-booking" class="btn btn-success rounded-3">
+                            <i class="bi bi-calendar-check me-1"></i> For Booking
+                        </button>
+                    </div>
+                    <div id="floors-list">
+                        <div class="text-center text-muted py-5">
+                            <i class="bi bi-building" style="font-size:2rem; opacity:.3"></i>
+                            <p class="mt-2 small">No floors added yet. Add a floor above to get started.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+</html>

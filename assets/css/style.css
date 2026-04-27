@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+
+.nav-tabs .nav-link {
+    color: #555;
+    font-size: 14px;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: 600;
+}
+
+/* Stat cards */
+.stat-card {
+    border: none;
+    border-radius: 12px;
+}
+
+.stat-card .stat-val {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.stat-card .stat-lbl {
+    font-size: 12px;
+    opacity: .7;
+}
+
+/* Room card */
+.room-card {
+    border-radius: 12px;
+    border: none;
+    transition: transform .15s, box-shadow .15s;
+}
+
+.room-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .10) !important;
+}
+
+.room-card.available {
+    border-left: 4px solid #198754 !important;
+}
+
+.room-card.occupied {
+    border-left: 4px solid #dc3545 !important;
+}
+
+.room-number {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.room-type {
+    font-size: 11px;
+}
+
+/* Floor heading */
+.floor-heading {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #888;
+    margin-bottom: .75rem;
+}
+
+/* Floor list item */
+.floor-list-item {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+}
+
+/* Modal confirm button row */
+.modal-footer {
+    border-top: 1px solid #eee;
+}
